@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="웹·앱서비스기획 조예린 포트폴리오" />
+  <title>조예린 | 웹·앱서비스기획 포트폴리오</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <style>
+    :root {
+      --blue: #3182F6;
+      --blue-dark: #1769d2;
+      --ink: #191F28;
+      --body: #4E5968;
+      --muted: #8B95A1;
+      --line: #E5E8EB;
+      --soft: #F2F4F6;
+      --white: #fff;
+      --radius: 18px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--white); color: var(--ink);
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55; letter-spacing: -0.02em;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(229,232,235,.7); }
+    .nav { height: 64px; display: flex; justify-content: space-between; align-items: center; }
+    .mark { font-size: 15px; font-weight: 800; letter-spacing: -.04em; }
+    .mark i { display: inline-block; width: 8px; height: 8px; background: var(--blue); border-radius: 50%; margin-left: 5px; }
+    .navlinks { display: flex; gap: 24px; color: var(--muted); font-size: 13px; font-weight: 600; }
+    .navlinks a:hover, .navlinks a:focus { color: var(--blue); }
+    .hero { padding: 104px 0 88px; border-bottom: 1px solid var(--line); }
+    .eyebrow { color: var(--blue); font-size: 14px; font-weight: 800; margin: 0 0 20px; }
+    h1 { max-width: 1000px; font-size: clamp(36px, 5.2vw, 60px); line-height: 1.08; letter-spacing: -.065em; margin: 0 0 26px; font-weight: 850; }
+    h1 span { color: var(--blue); }
+    .hero-copy { max-width: 610px; color: var(--body); font-size: 18px; margin: 0; }
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 58px; }
+    .metric { padding: 22px 20px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+    .metric strong { display: block; color: var(--ink); font-size: clamp(27px, 4vw, 42px); letter-spacing: -.06em; line-height: 1; margin-bottom: 9px; }
+    .metric strong em { color: var(--blue); font-style: normal; }
+    .metric small { color: var(--muted); font-size: 13px; font-weight: 650; }
+    section { padding: 92px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 32px; }
+    .section-kicker { color: var(--blue); font-size: 13px; font-weight: 800; margin-bottom: 8px; }
+    h2 { font-size: clamp(28px, 4vw, 42px); letter-spacing: -.055em; line-height: 1.15; margin: 0; }
+    .section-intro { max-width: 350px; color: var(--muted); font-size: 14px; margin: 0; text-wrap: pretty; }
+    .strengths { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .strength { min-height: 190px; padding: 24px; background: var(--soft); border-radius: var(--radius); position: relative; overflow: hidden; }
+    .strength::before, .case::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 4px; background: var(--blue); }
+    .num { color: var(--blue); font-size: 13px; font-weight: 800; }
+    .strength h3 { font-size: 20px; letter-spacing: -.045em; margin: 30px 0 10px; }
+    .strength p { color: var(--body); font-size: 14px; margin: 0; }
+    .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; }
+    .about-lead, .about-point { border-radius: var(--radius); padding: 30px; }
+    .about-lead { background: var(--ink); color: var(--white); min-height: 270px; display: flex; flex-direction: column; justify-content: space-between; }
+    .about-lead h3 { font-size: clamp(26px, 3.5vw, 38px); line-height: 1.18; letter-spacing: -.06em; margin: 0; }
+    .about-lead h3 span { color: #76AEFF; }
+    .about-lead p { color: #C9D1DB; font-size: 14px; max-width: 460px; margin: 26px 0 0; }
+    .about-points { display: grid; gap: 12px; }
+    .about-point { background: var(--soft); position: relative; padding-left: 25px; }
+    .about-point::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 4px; background: var(--blue); border-radius: 4px 0 0 4px; }
+    .about-point b { display: block; color: var(--blue); font-size: 13px; margin-bottom: 7px; }
+    .about-point p { color: var(--body); font-size: 14px; margin: 0; }
+    .cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .case { position: relative; background: var(--soft); border-radius: var(--radius); padding: 27px 28px 26px; }
+    .case-label { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: .04em; }
+    .case h3 { font-size: 21px; letter-spacing: -.05em; margin: 10px 0 16px; }
+    .case-result { display: inline-flex; align-items: baseline; gap: 7px; padding: 10px 12px; background: var(--white); border-radius: 10px; margin-bottom: 18px; }
+    .case-result strong { color: var(--blue); font-size: 25px; letter-spacing: -.05em; }
+    .case-result span { color: var(--muted); font-size: 12px; font-weight: 650; }
+    .steps { display: grid; gap: 10px; }
+    .step { display: grid; grid-template-columns: 54px 1fr; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(139,149,161,.22); }
+    .step b { color: var(--muted); font-size: 12px; font-weight: 800; }
+    .step p { margin: 0; color: var(--body); font-size: 13px; }
+    .case-note { margin: 22px 0 0; color: var(--muted); font-size: 12px; }
+    .timeline { position: relative; display: grid; gap: 0; }
+    .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
+    .career { position: relative; display: grid; grid-template-columns: 24px 170px 1fr; gap: 20px; padding: 0 0 34px; }
+    .career:last-child { padding-bottom: 0; }
+    .dot { width: 15px; height: 15px; border: 4px solid var(--white); background: var(--blue); border-radius: 50%; box-shadow: 0 0 0 1px var(--blue); z-index: 1; }
+    .career-company { font-size: 17px; font-weight: 800; }
+    .career-meta { color: var(--muted); font-size: 13px; }
+    .career-desc { color: var(--body); font-size: 14px; margin: 0; }
+    .education-card { display: grid; grid-template-columns: 220px 1fr; gap: 30px; background: var(--soft); border-radius: var(--radius); padding: 30px; position: relative; overflow: hidden; }
+    .education-card::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 4px; background: var(--blue); }
+    .education-label { display: inline-flex; padding: 6px 9px; border-radius: 99px; background: var(--white); color: var(--blue); font-size: 11px; font-weight: 800; letter-spacing: .04em; margin-bottom: 18px; }
+    .education-period { color: var(--blue); font-size: 14px; font-weight: 800; }
+    .education-org { color: var(--muted); font-size: 13px; margin-top: 8px; }
+    .education-title { margin: 0 0 12px; font-size: 26px; letter-spacing: -.05em; }
+    .education-desc { color: var(--body); font-size: 14px; margin: 0; }
+    .education-curriculum { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+    .education-chip { padding: 6px 9px; border: 1px solid rgba(49,130,246,.16); border-radius: 99px; background: rgba(255,255,255,.72); color: var(--body); font-size: 12px; font-weight: 650; }
+    .education-projects { display: inline-flex; margin-top: 20px; padding: 8px 11px; border-radius: 10px; background: var(--white); color: var(--blue); font-size: 13px; font-weight: 750; }
+    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .skill { border: 1px solid var(--line); border-radius: var(--radius); padding: 25px; }
+    .skill h3 { margin: 0 0 20px; font-size: 18px; letter-spacing: -.04em; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { border-radius: 99px; background: var(--soft); color: var(--body); padding: 7px 11px; font-size: 13px; font-weight: 650; }
+    footer { padding: 70px 0 38px; }
+    .footer-main { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
+    .footer-main h2 { max-width: 500px; font-size: clamp(26px, 3.8vw, 40px); text-wrap: balance; }
+    .footer-meta { color: var(--muted); font-size: 13px; text-align: right; }
+    .copyright { margin-top: 70px; color: var(--muted); font-size: 12px; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width: 800px) {
+      .wrap { width: min(calc(100% - 32px), var(--max)); }
+      .hero { padding: 72px 0 62px; }
+      section { padding: 66px 0; }
+      .navlinks { gap: 12px; font-size: 12px; }
+      .strengths { grid-template-columns: repeat(2, 1fr); }
+      .cases { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .education-card { grid-template-columns: 1fr; gap: 18px; }
+      .skills { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 801px) { h1 span { display: inline-block; white-space: nowrap; } }
+    @media (max-width: 560px) {
+      .nav { height: 56px; }
+      .navlinks a:nth-child(2), .navlinks a:nth-child(3), .navlinks a:nth-child(4) { display: none; }
+      .metrics, .cases, .strengths { grid-template-columns: 1fr; }
+      .metric { display: flex; align-items: center; justify-content: space-between; }
+      .metric strong { margin: 0; }
+      .metric small { text-align: right; }
+      .section-head, .footer-main { display: block; }
+      .section-intro { margin-top: 14px; }
+      .career { grid-template-columns: 24px 1fr; gap: 15px; }
+      .career-desc { grid-column: 2; margin-top: -12px; }
+      .footer-meta { text-align: left; margin-top: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="주요 메뉴">
+      <a class="mark" href="#top">JO YE RIN<i aria-hidden="true"></i></a>
+      <div class="navlinks"><a href="#about">소개</a><a href="#work">성과</a><a href="#career">경력</a><a href="#education">교육</a><a href="#skills">역량</a></div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap reveal">
+        <p class="eyebrow">웹·앱서비스기획자 · 조예린</p>
+        <h1>사용자의 막힘을 찾고,<br /><span>서비스의 다음 행동을 설계합니다.</span></h1>
+        <p class="hero-copy">데이터와 VOC를 바탕으로 사용자의 여정을 단축하고, 웹·앱 서비스의 기능 개선부터 운영·고도화까지 연결하는 서비스기획자입니다.</p>
+        <div class="metrics" aria-label="핵심 성과">
+          <div class="metric"><strong><em>60%+</em></strong><small>콘텐츠 클릭률 전월 대비 증가</small></div>
+          <div class="metric"><strong><em>90%</em></strong><small>문의 답변 대기 상태 단축</small></div>
+          <div class="metric"><strong><em>20%</em></strong><small>앱 푸시 수신 동의율</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strengths">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="section-kicker">WHY ME</p><h2>이렇게 해결했어요.</h2></div><p class="section-intro">사용자 여정과 운영 문제를 발견하고, 서비스 안에서 답을 설계합니다.</p></div>
+        <div class="strengths">
+          <article class="strength reveal"><span class="num">01</span><h3>핵심 콘텐츠를 바로 찾게 했어요</h3><p>사용자 정보에 따라 콘텐츠를 맞춤 노출하고, 주요 콘텐츠 클릭률을 전월 대비 60% 이상 높였습니다.</p></article>
+          <article class="strength reveal"><span class="num">02</span><h3>문의 답변을 빠르게 만들었어요</h3><p>고객문의 담당자 검색·SMS 발송 기능을 기획해 답변 대기 상태를 90% 단축했습니다.</p></article>
+          <article class="strength reveal"><span class="num">03</span><h3>가입과 이벤트 흐름을 줄였어요</h3><p>회원가입 단계에 추천인 아이디 기능을 추가해 가입 후 이벤트 페이지를 다시 방문하는 번거로움을 줄였습니다.</p></article>
+          <article class="strength reveal"><span class="num">04</span><h3>알림도 사용자 루틴에 맞췄어요</h3><p>주요 수강 시간대인 오전 9시·오후 6시 푸시 정책을 기획해 앱 푸시 수신 동의율 20%를 달성했습니다.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="section-kicker">ABOUT ME</p><h2>기획의 시작은<br />사용자의 막힘입니다.</h2></div><p class="section-intro">웹·앱 서비스의 문제를 발견하고, 실행 가능한 화면과 기능으로 바꾸는 서비스기획자입니다.</p></div>
+        <div class="about-grid">
+          <article class="about-lead reveal"><h3>사용자가 멈추는 지점을 찾고,<br /><span>다음 행동까지 설계합니다.</span></h3><p>GA, 실무자 설문, VOC와 서비스 운영 데이터를 바탕으로 문제를 구체화합니다. 이후 웹·앱 기능 개선, 신규 구축, 운영·고도화까지 사용자의 흐름이 실제로 달라지는 지점을 기획합니다.</p></article>
+          <div class="about-points">
+            <article class="about-point reveal"><b>문제를 정의하는 방식</b><p>사용자가 찾기 어렵고, 기다리고, 다시 방문해야 하는 순간을 사용자 여정의 문제로 구조화합니다.</p></article>
+            <article class="about-point reveal"><b>일하는 범위</b><p>메인·상세 페이지, 회원가입, 어드민, 앱 푸시, 신규 비즈니스 사이트와 구매 전환 도움 페이지를 기획했습니다.</p></article>
+            <article class="about-point reveal"><b>일의 기준</b><p>기획 의도보다 실제 사용성과 운영 효율의 변화로 결과를 확인합니다. 클릭률 60% 이상 증가, 답변 대기 90% 단축 등의 성과를 만들었습니다.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="section-kicker">SELECTED WORK · 09</p><h2>문제를 발견하고,<br />서비스로 해결했어요.</h2></div><p class="section-intro">비상교육과 메가스터디교육·넥스트스터디에서 진행한 전체 대표 프로젝트입니다.</p></div>
+        <div class="cases">
+          <article class="case reveal"><span class="case-label">01 · 비상교육</span><h3>사용자 콘텐츠 활성화 전략</h3><div class="case-result"><strong>60%+</strong><span>클릭률 전월 대비 증가</span></div><div class="steps"><div class="step"><b>배경</b><p>교수지원서비스에서 사용자가 핵심 콘텐츠를 찾기 위해 여러 depth를 거쳐야 했습니다.</p></div><div class="step"><b>실행</b><p>GA·실무자 설문을 바탕으로 로그인 정보에 따른 맞춤 콘텐츠와 비교과 콘텐츠를 메인에 노출했습니다.</p></div><div class="step"><b>결과</b><p>내 교과서·추천 자료 영역 클릭률이 전월 대비 60% 이상 증가했습니다.</p></div></div></article>
+          <article class="case reveal"><span class="case-label">02 · 비상교육</span><h3>상세 페이지 핵심 자료 탐색 개선</h3><div class="case-result"><strong>목표</strong><span>핵심 자료 접근성 개선</span></div><div class="steps"><div class="step"><b>배경</b><p>교과서의 많은 단원과 마우스 오버 하위 메뉴 때문에 핵심 자료를 찾기 어렵고 문의가 발생했습니다.</p></div><div class="step"><b>실행</b><p>하위 단원 기준 메뉴와 스크롤 시 고정되는 영역, 연간 핵심 자료 바로가기 버튼을 기획했습니다.</p></div><div class="step"><b>목표</b><p>여러 depth를 거치지 않고 핵심 자료를 직관적으로 확인하도록 개선했습니다.</p></div></div></article>
+          <article class="case reveal"><span class="case-label">03 · 비상교육</span><h3>추천인 아이디 기능 추가</h3><div class="case-result"><strong>정책</strong><span>회원 유형별 4가지 마일리지</span></div><div class="steps"><div class="step"><b>배경</b><p>가입 후 이벤트 페이지를 다시 방문해 추천인 아이디를 수기로 입력해야 했습니다.</p></div><div class="step"><b>실행</b><p>회원가입 양식에 추천인 아이디 검색·유효성 체크를 추가하고 회원 유형별 마일리지 정책을 재수립했습니다.</p></div><div class="step"><b>목표</b><p>신규 가입과 이벤트 참여 사이의 단계를 줄여 이탈을 방지했습니다.</p></div></div></article>
+          <article class="case reveal"><span class="case-label">04 · 비상교육</span><h3>고객문의 담당자 SMS 발송</h3><div class="case-result"><strong>90%</strong><span>답변 대기 상태 단축</span></div><div class="steps"><div class="step"><b>배경</b><p>담당자의 어드민 접속 주기가 일정하지 않아 답변이 최대 2~3일 지연됐습니다.</p></div><div class="step"><b>실행</b><p>내부 어드민에 담당자 검색과 SMS 발송 기능을 추가했습니다.</p></div><div class="step"><b>결과</b><p>문의 답변 대기 상태를 일 기준 90% 단축했습니다.</p></div></div></article>
+          <article class="case reveal"><span class="case-label">05 · 메가스터디교육 / 넥스트스터디</span><h3>앱 푸시 기능 도입</h3><div class="case-result"><strong>20%</strong><span>푸시 수신 동의율</span></div><div class="steps"><div class="step"><b>배경</b><p>혜택과 강의 업데이트를 확인하려면 사용자가 매번 앱에 직접 접속해야 했습니다.</p></div><div class="step"><b>실행</b><p>앱 설정에서 강의 업데이트 수신을 선택하고, 오전 9시·오후 6시 맞춤 발송 정책을 기획했습니다.</p></div><div class="step"><b>결과</b><p>앱 푸시 수신 동의율 20%를 달성했습니다.</p></div></div></article>
+          <article class="case reveal"><span class="case-label">06 · 메가스터디교육 / 넥스트스터디</span><h3>구매 정보 기반 메인 개인화</h3><div class="case-result"><strong>방식</strong><span>회원 유형별 A/B 메인 노출</span></div><div class="steps"><div class="step"><b>배경</b><p>비로그인·비구매자와 구매자는 필요한 정보와 서비스 목적이 달랐습니다.</p></div><div class="step"><b>실행</b><p>회원의 구매 정보를 기준으로 두 가지 메인 페이지 타입을 설계했습니다.</p></div><div class="step"><b>목표</b><p>비구매자의 구매 전환과 기존 고객의 유지율 상승을 지원했습니다.</p></div></div></article>
+          <article class="case reveal"><span class="case-label">07 · 메가스터디교육 / 넥스트스터디</span><h3>자격증 사이트 신규 구축</h3><div class="case-result"><strong>범위</strong><span>신규 비즈니스 사이트 구축</span></div><div class="steps"><div class="step"><b>배경</b><p>신규 사업 목적에 맞는 자격증 사이트의 주요 메인 영역이 필요했습니다.</p></div><div class="step"><b>실행</b><p>기존 운영 사이트 구조를 활용해 교재·수강 후기·추천 영상을 메인 일부 영역에 기획하고 어드민 연동을 반영했습니다.</p></div><div class="step"><b>목표</b><p>구매자에게 필요한 정보를 한 화면에서 제공했습니다.</p></div></div></article>
+          <article class="case reveal"><span class="case-label">08 · 메가스터디교육 / 넥스트스터디</span><h3>이벤트 모음 페이지 기획</h3><div class="case-result"><strong>목표</strong><span>이벤트 참여 유도</span></div><div class="steps"><div class="step"><b>배경</b><p>진행 중인 이벤트와 기획전이 작은 배너 구좌에만 노출되어 참여도가 낮았습니다.</p></div><div class="step"><b>실행</b><p>진행 중·종료·당첨자 발표 메뉴를 분리해 이벤트 정보를 직관적으로 확인하도록 구성했습니다.</p></div><div class="step"><b>목표</b><p>강사 기획전과 이벤트의 노출 및 참여를 높였습니다.</p></div></div></article>
+          <article class="case reveal"><span class="case-label">09 · 메가스터디교육 / 넥스트스터디</span><h3>주력상품 후기 모음 페이지</h3><div class="case-result"><strong>목표</strong><span>구매 전 정보 제공</span></div><div class="steps"><div class="step"><b>배경</b><p>비구매자에게 주력 상품인 패스의 실제 구매 후기를 제공할 필요가 있었습니다.</p></div><div class="step"><b>실행</b><p>마이페이지에 별도 메뉴를 구성하고, 구매 이력이 있는 회원에게만 후기 작성 기능을 노출했습니다.</p></div><div class="step"><b>목표</b><p>구매 전 후기 정보 제공을 통해 구매 전환을 지원했습니다.</p></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="career">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="section-kicker">CAREER</p><h2>웹과 앱, 운영과 구축을<br />한 흐름으로 경험했어요.</h2></div></div>
+        <div class="timeline" aria-label="경력 타임라인">
+          <div class="career reveal"><span class="dot" aria-hidden="true"></span><div><div class="career-company">에티버스 이비티</div><div class="career-meta">2021.12 — 2022.06</div></div><p class="career-desc">개발팀 · IT 전문 B2B 쇼핑몰 웹서비스기획 담당. 모바일웹·앱 신규 기획, 내부 어드민 기능 추가, 취소·반품·교환 상세 UI 개선, 회원가입 개편에 참여했습니다.</p></div>
+          <div class="career reveal"><span class="dot" aria-hidden="true"></span><div><div class="career-company">비상교육</div><div class="career-meta">2022.12 — 2024.03</div></div><p class="career-desc">웹서비스기획. 교수지원서비스 플랫폼 웹 메인·상세 페이지 총 2회 리뉴얼, 회원가입·내부 어드민 기능 추가, 사이트 운영·고도화와 월 1회 VOC 분석을 담당했습니다.</p></div>
+          <div class="career reveal"><span class="dot" aria-hidden="true"></span><div><div class="career-company">메가스터디교육 / 넥스트스터디</div><div class="career-meta">2024.09 — 2026.01</div></div><p class="career-desc">웹서비스팀. 공무원 온라인 강의 서비스 플랫폼 웹·앱 서비스 기능 개선과 운영, 앱 푸시 기능 도입, 메인 및 일부 서비스 페이지 리뉴얼, 신규 비즈니스 사이트 구축, 마케팅 지원과 구매 전환 도움 페이지를 담당했습니다.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="section-kicker">EDUCATION</p><h2>기술을 이해하고,<br />제품으로 연결합니다.</h2></div><p class="section-intro">개발 언어와 웹·앱 기술에 대한 이해를 바탕으로 기획과 개발 사이를 연결합니다.</p></div>
+        <article class="education-card reveal">
+          <div><span class="education-label">JAVA DEVELOPER COURSE</span><div class="education-period">2020.10 — 2021.04</div><div class="education-org">한국소프트웨어인재개발원 (KOSMO)</div></div>
+          <div><h3 class="education-title">Java 개발자 양성과정</h3><p class="education-desc">비전공자로 시작했지만, Java 개발자 양성과정을 통해 개발·데이터베이스·웹 UI/UX·Android를 학습하며 기획과 구현 사이를 이해하는 기반을 만들었습니다.</p><div class="education-curriculum" aria-label="교육 내용"><span class="education-chip">응용프로그래밍</span><span class="education-chip">데이터베이스 &amp; 모델링</span><span class="education-chip">스마트 웹 UI / UX</span><span class="education-chip">MVC2 type 웹 프로그래밍</span><span class="education-chip">스프링 프레임워크</span><span class="education-chip">Android</span></div><span class="education-projects">교육 중 총 3개 프로젝트 수행</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="section-kicker">CAPABILITIES</p><h2>제가 연결할 수 있는 일.</h2></div></div>
+        <div class="skills">
+          <article class="skill reveal"><h3>서비스 기획</h3><div class="tags"><span class="tag">웹·앱 서비스</span><span class="tag">신규 구축</span><span class="tag">기능 개선</span><span class="tag">운영·고도화</span></div></article>
+          <article class="skill reveal"><h3>UI/UX · 데이터</h3><div class="tags"><span class="tag">사용자 여정</span><span class="tag">GA 분석</span><span class="tag">VOC 분석</span><span class="tag">메인·상세 리뉴얼</span></div></article>
+          <article class="skill reveal"><h3>비즈니스 지원</h3><div class="tags"><span class="tag">구매 전환</span><span class="tag">마케팅 지원</span><span class="tag">어드민 기획</span><span class="tag">EXCEL / POWER POINT</span></div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-main reveal"><h2>사용자의 불편을 발견하면,<br /><span style="color:var(--blue)">서비스의 다음 장면으로 바꿉니다.</span></h2><p class="footer-meta">조예린<br /><a href="mailto:youdam123@naver.com">youdam123@naver.com</a><br />010-2644-7516</p></div>
+      <p class="copyright">© JO YE RIN. Web & App Service Planning Portfolio.</p>
+    </div>
+  </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
